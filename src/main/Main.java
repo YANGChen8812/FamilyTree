@@ -1,5 +1,4 @@
 package main;
-import javax.swing.JFrame;
 
 import peopleDao.DAO;
 import peopleDao.PeopleDAO;
