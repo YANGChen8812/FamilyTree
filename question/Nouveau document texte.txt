@@ -1,0 +1,5 @@
+A t'il un/des frère(s) ?
+A t'il une/des soeur(s) ?
+Machin fait il parti de sa famille ?
+Machin est il son père ?
+Machin est il son mère ?
