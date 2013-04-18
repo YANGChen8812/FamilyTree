@@ -11,6 +11,8 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
+		new GUI();
+		
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-02.csv");
 		
