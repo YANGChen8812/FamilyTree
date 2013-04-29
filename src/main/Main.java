@@ -2,6 +2,7 @@ package main;
 
 //test nico
 
+import game.Fenetre;
 import game.Information;
 import game.Menu;
 import game.Question;
@@ -22,6 +23,7 @@ public class Main {
 		new Rules();
 		new Information();
 		new Question();
+		new Fenetre();
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-09.csv");
 		
