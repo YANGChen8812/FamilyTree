@@ -20,7 +20,7 @@ public class Rules extends JFrame  {
 	private static final long serialVersionUID = 1L;
 
 	public Rules (){
-		JFrame fen =new JFrame();
+		JFrame fen =new JFrame("Rules");
 		fen . setPreferredSize (new Dimension (400 ,480));
 		fen . setDefaultCloseOperation ( JFrame . EXIT_ON_CLOSE );
 		fen . setLayout (new BorderLayout ());
