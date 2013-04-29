@@ -104,4 +104,8 @@ public class Human {
 		}
 		
 	}
+	
+	public void parentLink(Human pPeople){
+		System.out.println("Mister "+pPeople.getlname()+" "+pPeople.getfname()+" have for father "+pPeople);
+	}
 }
