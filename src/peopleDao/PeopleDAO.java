@@ -178,14 +178,12 @@ public class PeopleDAO implements DAO {
 			
 		if(values[2] != null)
 		{	
-			if(values[2] == "M")
-				h.setSexe('M');
-			else if(values[2] == "F")
-				h.setSexe('F');
+			if(values[2] == "M" || values[2] == "F")
+				h.setSexe(values[2]);
 			else
-				h.setSexe('Z');
+				h.setSexe("Z");
 		}
-		else h.setSexe('Z');	
+		else h.setSexe("Z");	
 		
 		if(values[3] != null)
 			h.setfather(values[3]);
