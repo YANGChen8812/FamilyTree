@@ -12,6 +12,7 @@ public class PeopleDAO implements DAO {
 
 	private File file;
 	private List<Human> people;
+	private final static String SEPARATOR = ";";
 
 	/*
 	 *  Getter de la classe PeopleDAO
@@ -55,8 +56,8 @@ public class PeopleDAO implements DAO {
 		List<String> lineList = getLinesFromFile();
 		if(lineList == null)
 			return null;
-		
-		this.people = fromLineToHumans(lineList);
+
+		this.people = fromLinesToHumans(lineList);
 		return people;
 	}
 	/*
@@ -143,9 +144,61 @@ public class PeopleDAO implements DAO {
 	 * 
 	 */
 	@Override
-	public List<Human> fromLineToHumans(List<String> lineList) {
+	public List<Human> fromLinesToHumans(List<String> lineList) {
 		System.out.println("FROMµ LINE TO HUMANS");
+		Human h = null;
+		for(String i : lineList){
+			h = transformLineToHuman(i);
+			if(h != null)
+				people.add(h);
+		}
 		return people;
+	}
+	
+	/*
+	 * 
+	 *
+	 * 
+	 */
+	@Override
+	public Human transformLineToHuman(String line){
+		final Human h = new Human();
+		String[] values = { "", "", "", "", "", "" };
+		values = line.split(SEPARATOR);
+		if(values[1]=="Nom")
+			return null;
+
+		if(values[0] != null)
+				h.setfname(values[0]);
+		else h.setfname("");
+		
+		if(values[1] != null)
+			h.setlname(values[1]);
+		else h.setlname("");
+			
+		if(values[2] != null)
+			if(values[2] == "M")
+				h.setSexe('M');
+			else if(values[2] == "F")
+				h.setSexe('F');
+			else
+				h.setSexe('Z');
+		else h.setSexe('Z');	
+		
+		if(values[3] != null)
+			h.setfather(values[3]);
+		else h.setfather("");
+		
+		if(values[4] != null)
+			h.setmother(values[4]);
+		else h.setmother("");
+		
+		if(values[5] != null)
+			h.setbirthDate(values[5]);
+		else h.setbirthDate("");
+		
+		return h;
+		
 	}
 	
 	/*

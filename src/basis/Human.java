@@ -67,30 +67,65 @@ public class Human {
 	
 	//********** SETTERS **********//
 	public void setId(int pId){
+		if(pId<=0){
+			System.err.println("INVALID personID, negative or zero value");
+			pId = 0;
+		}
 		this.id=pId;
 	}
-	
+		
 	public void setfname(String pfname){
+		for(int i=0; i<pfname.length(); i++ ){
+			if(!Character.isLetter(pfname.charAt(i))){	 
+				pfname="";
+				System.err.println("INVALID personFIRSTNAME, contains non letter character");
+				break;
+			}
+		}
 		this.fname=pfname;
 	}
-	
+		
 	public void setlname(String plname){
+		for(int i=0; i<plname.length(); i++ ){	
+			if(!Character.isLetter(plname.charAt(i))){
+				plname="";
+				System.err.println("INVALID personLASTNAME, contains non letter character");
+				break;
+			}
+		}
 		this.lname=plname;
 	}
-	
+		
 	public void setSexe(char pSexe){
+		if(pSexe!='M' && pSexe!='F')
+			this.sexe = 'Z';
 		this.sexe=pSexe;
 	}
 	
 	public void setbirthDate(String pbirthDate){
+		
 		this.birthDate=pbirthDate;
 	}
 	
 	public void setfather(String pfather){
+		for(int i=0; i<pfather.length(); i++ ){
+			if(!Character.isLetter(pfather.charAt(i))){	 
+				pfather="";
+				System.err.println("INVALID personFIRSTNAME, contains non letter character");
+				break;
+			}
+		}
 		this.father=pfather;
 	}
 	
 	public void setmother(String pmother){
+		for(int i=0; i<pmother.length(); i++ ){
+			if(!Character.isLetter(pmother.charAt(i))){	 
+				pmother="";
+				System.err.println("INVALID personFIRSTNAME, contains non letter character");
+				break;
+			}
+		}
 		this.mother=pmother;
 	}
 	
