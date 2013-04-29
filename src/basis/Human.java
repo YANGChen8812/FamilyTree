@@ -7,7 +7,7 @@ public class Human {
 	private int id;
 	private String fname;
 	private String lname;
-	private String sexe;
+	private char sexe;
 	private String birthDate;
 	private String father;
 	private String mother;
@@ -19,13 +19,13 @@ public class Human {
 		this.id=0;
 		this.fname="Inconnu";
 		this.lname="Inconnu";
-		this.sexe="Inconnu";
+		this.sexe='Z';
 		this.birthDate="Inconnu";
 		this.father="Inconnu";
 		this.mother="Inconnu";
 	}
 	
-	public Human(String pfname, String plname, String pSexe, String pbirthDate, String pfather, String pmother){
+	public Human(String pfname, String plname, char pSexe, String pbirthDate, String pfather, String pmother){
 		System.out.println("Building a human called "+plname+" "+pfname+" born "+pbirthDate+" and his father is "+pfather+" and his mother is "+pmother);
 		this.fname=pfname;
 		this.lname=plname;
@@ -49,7 +49,7 @@ public class Human {
 		return this.lname;
 	}
 	
-	public String getSexe(){
+	public char getSexe(){
 		return this.sexe;
 	}
 	
@@ -78,7 +78,7 @@ public class Human {
 		this.lname=plname;
 	}
 	
-	public void setSexe(String pSexe){
+	public void setSexe(char pSexe){
 		this.sexe=pSexe;
 	}
 	
