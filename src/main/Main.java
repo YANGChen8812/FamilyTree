@@ -20,7 +20,7 @@ public class Main {
 		new Rules();
 		
 		DAO interf = new PeopleDAO();
-		interf.fileFromPath("csvFiles/gen-09.csv");
+		interf.fileFromPath("csvFiles/gen-01.csv");
 		
 		interf.showHumans(interf.getHumans(), interf.getLinesFromFile());
 	

@@ -15,7 +15,7 @@ public class Human {
 	//********** BUILDERS **********//
 	
 	public Human(){
-		System.out.println("Creating a human");
+		System.out.println("Creating a human from ZERO VALUES");
 		this.id=0;
 		this.fname="Inconnu";
 		this.lname="Inconnu";
@@ -97,9 +97,15 @@ public class Human {
 	}
 		
 	public void setSexe(char pSexe){
-		if(pSexe!='M' && pSexe!='F')
+		if( pSexe=='M' || pSexe=='F' )
+		{
+			this.sexe=pSexe;
+			
+		}
+		else {
 			this.sexe = 'Z';
-		this.sexe=pSexe;
+			System.err.println("INVALID SEX : value :"+pSexe);
+		}
 	}
 	
 	public void setbirthDate(String pbirthDate){
@@ -109,9 +115,9 @@ public class Human {
 	
 	public void setfather(String pfather){
 		for(int i=0; i<pfather.length(); i++ ){
-			if(!Character.isLetter(pfather.charAt(i))){	 
+			if(!Character.isLetter(pfather.charAt(i)) && (pfather.charAt(i)!=' ') ){	 
 				pfather="";
-				System.err.println("INVALID personFIRSTNAME, contains non letter character");
+				System.err.println("INVALID FATHER NAME, contains invalid character");
 				break;
 			}
 		}
@@ -120,9 +126,9 @@ public class Human {
 	
 	public void setmother(String pmother){
 		for(int i=0; i<pmother.length(); i++ ){
-			if(!Character.isLetter(pmother.charAt(i))){	 
+			if(!Character.isLetter(pmother.charAt(i)) && (pmother.charAt(i)!=' ') ){	 
 				pmother="";
-				System.err.println("INVALID personFIRSTNAME, contains non letter character");
+				System.err.println("INVALID MOTHER NAME, contains invalid character");
 				break;
 			}
 		}
