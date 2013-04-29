@@ -82,7 +82,7 @@ public class PeopleDAO implements DAO {
 	 */
 	@Override
 	public List<String> getLinesFromFile() {
-
+		System.out.println("getting Lines From CSV File");
 		final List<String> lineList = new ArrayList<String>();
 
 		FileReader fR = null;
@@ -177,12 +177,14 @@ public class PeopleDAO implements DAO {
 		else h.setlname("");
 			
 		if(values[2] != null)
+		{	
 			if(values[2] == "M")
 				h.setSexe('M');
 			else if(values[2] == "F")
 				h.setSexe('F');
 			else
 				h.setSexe('Z');
+		}
 		else h.setSexe('Z');	
 		
 		if(values[3] != null)
