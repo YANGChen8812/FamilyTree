@@ -93,4 +93,15 @@ public class Human {
 	public void setmother(String pmother){
 		this.mother=pmother;
 	}
+	
+	//*****METHODS*****
+	public boolean isParent(Human pParent, Human pChild){
+		if(pParent.getfname()==pChild.getfather() || pParent.getfname()==pChild.getmother()){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
 }
