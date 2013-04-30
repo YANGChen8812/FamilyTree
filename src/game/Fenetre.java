@@ -26,12 +26,12 @@ CardLayout cl = new CardLayout();
   int indice = 0;
  
   public Fenetre(){
-	JFrame fen = new JFrame();
-    fen.setTitle("Qui est-ce?");
-    fen.setSize(400, 480);
-    fen . setLayout (new BorderLayout ());
-    fen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    fen.setLocationRelativeTo(null);
+
+    this.setTitle("Qui est-ce?");
+    this.setSize(400, 480);
+    this . setLayout (new BorderLayout ());
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setLocationRelativeTo(null);
     
     // button creation
        JButton goRules = new JButton("Règles");
@@ -148,7 +148,7 @@ CardLayout cl = new CardLayout();
     //Rules panel
     JPanel rulesPanel = new JPanel();
     rulesPanel. setLayout ( new FlowLayout ( FlowLayout . LEFT ));
-    fen.add( rulesPanel , BorderLayout . SOUTH );
+    this.add( rulesPanel , BorderLayout . SOUTH );
     rulesPanel.add( new JTextArea("Le premier joueur choisis dans la liste la personne qu'elle souhaite faire deviner , elle peut lire les questions que l'adversaire pour l'aider dans son choix. \n"));
     rulesPanel . add (goMenu);
     rulesPanel . add (goTree2);
