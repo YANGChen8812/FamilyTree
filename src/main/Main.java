@@ -31,7 +31,7 @@ public class Main {
 		new Perdu();
 		new Gagne();
 		DAO interf = new PeopleDAO();
-		interf.fileFromPath("csvFiles/gen-01.csv");
+		interf.fileFromPath("csvFiles/famille-01.csv");
 		interf.findPeople();
 		interf.showHumans(interf.getHumans());
 	
