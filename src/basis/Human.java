@@ -145,7 +145,7 @@ public class Human {
 	public void setfather(String pfather) {
 		for (int i = 0; i < pfather.length(); i++) {
 			if (!Character.isDigit(pfather.charAt(i)) && (pfather.charAt(i) != ' ')) {
-				pfather = "";
+				pfather = "0";
 				System.err.println("INVALID FATHER NAME, contains invalid character");
 				break;
 			}
@@ -156,7 +156,7 @@ public class Human {
 	public void setmother(String pmother) {
 		for (int i = 0; i < pmother.length(); i++) {
 			if (!Character.isDigit(pmother.charAt(i)) && (pmother.charAt(i) != ' ')) {
-				pmother = "";
+				pmother = "0";
 				System.err.println("INVALID MOTHER NAME, contains invalid character");
 				break;
 			}

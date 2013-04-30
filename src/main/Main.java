@@ -45,6 +45,7 @@ public class Main {
 		Human son=testPeople.get(2);
 		boolean bool=father.isParent(father,son);
 		System.out.println(bool);
+		son.parentLink(son, testPeople); 
 		
 	
 	}
