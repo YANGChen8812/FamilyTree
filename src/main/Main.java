@@ -2,9 +2,12 @@ package main;
 
 //test nico
 
+import game.Arbre;
 import game.Fenetre;
+import game.Gagne;
 import game.Information;
 import game.Menu;
+import game.Perdu;
 import game.Question;
 import game.Rules;
 import peopleDao.DAO;
@@ -24,6 +27,9 @@ public class Main {
 		new Information();
 		new Question();
 		new Fenetre();
+		new Arbre();
+		new Perdu();
+		new Gagne();
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-01.csv");
 		interf.findPeople();
