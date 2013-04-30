@@ -30,11 +30,11 @@ public class Main {
 		new Rules();
 		new Information();
 		new Question();
-		new Fenetre();
+		
 		new Arbre();
 		new Perdu();
 		new Gagne();
-	*/
+		*/
 		new Fenetre();
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-01.csv");
