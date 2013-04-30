@@ -102,7 +102,7 @@ public class PeopleDAO implements DAO {
 					continue;
 				}
 				line = line.trim();
-
+				System.out.println("----------------------------------"+line);
 				lineList.add(line);
 				line = bR.readLine();
 			}
@@ -114,6 +114,7 @@ public class PeopleDAO implements DAO {
 		}
 
 		finally {
+			System.out.println("---------------------------------- FINALLY from getlines from file");
 			if (bR != null) {
 				try {
 					bR.close();
@@ -145,7 +146,7 @@ public class PeopleDAO implements DAO {
 	 */
 	@Override
 	public List<Human> fromLinesToHumans(List<String> lineList) {
-		System.out.println("FROMµ LINE TO HUMANS");
+		System.out.println("FROM LINE TO HUMANS");
 		Human h = null;
 		for(String i : lineList){
 			h = transformLineToHuman(i);
@@ -178,8 +179,10 @@ public class PeopleDAO implements DAO {
 			
 		if(values[2] != null)
 		{	
-			if(values[2] == "M" || values[2] == "F")
-				h.setSexe(values[2]);
+			if(values[2].charAt(0) == 'M')
+				h.setSexe("M");
+			else if(values[2].charAt(0) == 'F')
+				h.setSexe("F");
 			else
 				h.setSexe("Z");
 		}
