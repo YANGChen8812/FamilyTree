@@ -193,8 +193,8 @@ public class Human {
 		parents.set(1, mother);
 		System.out.println("Mister " + pPeople.getlname() + " "
 				+ pPeople.getfname() + " have for father "
-				+ pPeople.getfather() + " and for mother "
-				+ pPeople.getmother());
+				+ father.getfname() + " and for mother "
+				+ mother.getfname());
 		return parents;
 	}
 }

@@ -2,6 +2,8 @@ package main;
 
 //test nico
 
+import java.util.List;
+
 import game.Arbre;
 import game.Fenetre;
 import game.Gagne;
@@ -12,6 +14,7 @@ import game.Question;
 import game.Rules;
 import peopleDao.DAO;
 import peopleDao.PeopleDAO;
+import basis.Human;
 
 
 public class Main {
@@ -21,7 +24,8 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-//		new GUI();
+		/*
+		new GUI();
 		new Menu();
 		new Rules();
 		new Information();
@@ -30,10 +34,18 @@ public class Main {
 		new Arbre();
 		new Perdu();
 		new Gagne();
+		*/
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-01.csv");
 		interf.findPeople();
 		interf.showHumans(interf.getHumans());
+		/*Test of Human method DON'T ERASE IT*/
+		List<Human> testPeople=interf.getHumans();
+		Human father=testPeople.get(1);
+		Human son=testPeople.get(2);
+		boolean bool=father.isParent(father,son);
+		System.out.println(bool);
+		
 	
 	}
 
