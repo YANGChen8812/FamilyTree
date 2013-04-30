@@ -7,7 +7,7 @@ public class Human {
 	
 	//********** VARIABLES **********
 	
-	private String id;
+	private int id;
 	private String fname;
 	private String lname;
 	private String sexe;
@@ -19,7 +19,7 @@ public class Human {
 	
 	public Human(){
 		System.out.println("Creating a human from ZERO VALUES");
-		this.id="0";
+		this.id=0;
 		this.fname="Inconnu";
 		this.lname="Inconnu";
 		this.sexe="Z";
@@ -28,7 +28,7 @@ public class Human {
 		this.mother="Inconnu";
 	}
 	
-	public Human(String pfname, String plname, String pSexe, String pbirthDate, String pfather, String pmother, String pid){
+	public Human(String pfname, String plname, String pSexe, String pbirthDate, String pfather, String pmother, int pid){
 		System.out.println("Building a human called "+plname+" "+pfname+" born "+pbirthDate+" and his father is "+pfather+" and his mother is "+pmother);
 		this.fname=pfname;
 		this.lname=plname;
@@ -45,7 +45,7 @@ public class Human {
 		return this.fname;
 	}
 	
-	public String getId(){
+	public int getId(){
 		return this.id;
 	}
 	
@@ -70,13 +70,10 @@ public class Human {
 	}
 	
 	//********** SETTERS **********//
-	public void setId(String pId){
-		for(int i=0;i<pId.length();i++){
-			if(!Character.isDigit(pId.charAt(i))){
-				pId="";
-				System.err.println("INVALID person ID, contains non digit character");
-				break;
-			}
+	public void setId(int pId){
+		if(pId<0){
+			System.err.println("INVALID ID, ID have to be greater than 0");
+			pId=0;
 		}
 		this.id=pId;
 	}
