@@ -48,14 +48,17 @@ public class PeopleDAO implements DAO {
 	 */
 	@Override
 	public List<Human> findPeople() {
-
+		System.out.println("********************************************************************** FIND PEOPLE ");
 		if(this.file == null)
 			return null;
 		this.people = new ArrayList<Human>();
 
 		List<String> lineList = getLinesFromFile();
-		if(lineList == null)
+		if(lineList == null || lineList.isEmpty())
+		{
+			System.out.println("********************************************************************** Empty List ");
 			return null;
+		}
 
 		this.people = fromLinesToHumans(lineList);
 		return people;
@@ -164,42 +167,39 @@ public class PeopleDAO implements DAO {
 	@Override
 	public Human transformLineToHuman(String line){
 		final Human h = new Human();
-		String[] values = { "", "", "", "", "", "" };
+		String[] values = { "", "", "", "", "", "", "" };
+		int indicator=-1;
 		values = line.split(SEPARATOR);
-		if(values[1]=="Nom")
-			return null;
-
-		if(values[0] != null)
-				h.setfname(values[0]);
-		else h.setfname("");
-		
-		if(values[1] != null)
-			h.setlname(values[1]);
-		else h.setlname("");
-			
-		if(values[2] != null)
-		{	
-			if(values[2].charAt(0) == 'M')
-				h.setSexe("M");
-			else if(values[2].charAt(0) == 'F')
-				h.setSexe("F");
-			else
-				h.setSexe("Z");
+		for(int i=0; i<values.length; i++){
+			if(values[i] == null)
+				return null;
 		}
-		else h.setSexe("Z");	
+
+		h.setfname(values[0]);
+		h.setlname(values[1]);
+
+		if(values[2].charAt(0) == 'M')
+			h.setSexe("M");
+		else if(values[2].charAt(0) == 'F')
+			h.setSexe("F");
+		else
+			h.setSexe("Z");
 		
-		if(values[3] != null)
-			h.setfather(values[3]);
-		else h.setfather("");
+		h.setfather(values[3]);
+		h.setmother(values[4]);
+		h.setbirthDate(values[5]);
 		
-		if(values[4] != null)
-			h.setmother(values[4]);
-		else h.setmother("");
-		
-		if(values[5] != null)
-			h.setbirthDate(values[5]);
-		else h.setbirthDate("");
-		
+		for(int i=0; i<values[6].length(); i++){
+			if( !Character.isDigit(values[6].charAt(i)) ){
+				indicator = 0;
+				h.setId(indicator);
+				break;
+			}
+		}
+		if(indicator != 0){
+			indicator = Integer.parseInt(values[6]);
+			h.setId(indicator);
+		}
 		return h;
 		
 	}
