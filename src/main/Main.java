@@ -30,11 +30,12 @@ public class Main {
 		new Rules();
 		new Information();
 		new Question();
-		new Fenetre();
+		
 		new Arbre();
 		new Perdu();
 		new Gagne();
 		*/
+		new Fenetre();
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-01.csv");
 		interf.findPeople();
@@ -45,7 +46,7 @@ public class Main {
 		Human son=testPeople.get(2);
 		boolean bool=father.isParent(father,son);
 		System.out.println(bool);
-		son.parentLink(son, testPeople); 
+		//son.parentLink(son, testPeople); 
 		
 	
 	}
