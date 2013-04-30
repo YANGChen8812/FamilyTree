@@ -52,10 +52,10 @@ public class PeopleDAO implements DAO {
 		if(this.file == null)
 			return null;
 		this.people = new ArrayList<Human>();
-
+		
+		System.out.println("********************************************************************** go get the lines in the file ");
 		List<String> lineList = getLinesFromFile();
-		if(lineList == null || lineList.isEmpty())
-		{
+		if(lineList == null || lineList.isEmpty()){
 			System.out.println("********************************************************************** Empty List ");
 			return null;
 		}
@@ -133,7 +133,8 @@ public class PeopleDAO implements DAO {
 				}
 			}
 		}
-
+		
+		System.out.println("---------------------------------- RETURN of the list of lines");
 		return lineList;
 
 	}
