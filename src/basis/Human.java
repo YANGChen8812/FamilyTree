@@ -24,8 +24,8 @@ public class Human {
 		this.lname = "Inconnu";
 		this.sexe = "Z";
 		this.birthDate = "Inconnu";
-		this.father = "Inconnu";
-		this.mother = "Inconnu";
+		this.father = "0";
+		this.mother = "0";
 	}
 
 	public Human(String pfname, String plname, String pSexe, String pbirthDate,
@@ -85,8 +85,7 @@ public class Human {
 		for (int i = 0; i < pfname.length(); i++) {
 			if (!Character.isLetter(pfname.charAt(i))) {
 				pfname = "";
-				System.err
-						.println("INVALID personFIRSTNAME, contains non letter character");
+				System.err.println("INVALID personFIRSTNAME, contains non letter character");
 				break;
 			}
 		}
@@ -97,8 +96,7 @@ public class Human {
 		for (int i = 0; i < plname.length(); i++) {
 			if (!Character.isLetter(plname.charAt(i))) {
 				plname = "";
-				System.err
-						.println("INVALID personLASTNAME, contains non letter character");
+				System.err.println("INVALID personLASTNAME, contains non letter character");
 				break;
 			}
 		}
@@ -146,11 +144,9 @@ public class Human {
 
 	public void setfather(String pfather) {
 		for (int i = 0; i < pfather.length(); i++) {
-			if (!Character.isLetter(pfather.charAt(i))
-					&& (pfather.charAt(i) != ' ')) {
+			if (!Character.isDigit(pfather.charAt(i)) && (pfather.charAt(i) != ' ')) {
 				pfather = "";
-				System.err
-						.println("INVALID FATHER NAME, contains invalid character");
+				System.err.println("INVALID FATHER NAME, contains invalid character");
 				break;
 			}
 		}
@@ -159,11 +155,9 @@ public class Human {
 
 	public void setmother(String pmother) {
 		for (int i = 0; i < pmother.length(); i++) {
-			if (!Character.isLetter(pmother.charAt(i))
-					&& (pmother.charAt(i) != ' ')) {
+			if (!Character.isDigit(pmother.charAt(i)) && (pmother.charAt(i) != ' ')) {
 				pmother = "";
-				System.err
-						.println("INVALID MOTHER NAME, contains invalid character");
+				System.err.println("INVALID MOTHER NAME, contains invalid character");
 				break;
 			}
 		}
@@ -172,8 +166,9 @@ public class Human {
 
 	// *****METHODS*****
 	public boolean isParent(Human pParent, Human pChild) {
-		if (pParent.getfname() == pChild.getfather()
-				|| pParent.getfname() == pChild.getmother()) {
+		int idFather=Integer.parseInt(pChild.getfather());
+		int idMother=Integer.parseInt(pChild.getmother());
+		if (pParent.getId() == idFather || pParent.getId() == idMother) {
 			return true;
 		} else {
 			return false;
@@ -182,13 +177,15 @@ public class Human {
 	}
 
 	public List<Human> parentLink(Human pPeople, List<Human> allpeople) {
+		int idFather=Integer.parseInt(pPeople.getfather());
+		int idMother=Integer.parseInt(pPeople.getmother());
 		List<Human> parents = new ArrayList<Human>();
 		Human father = new Human();
 		Human mother = new Human();
 		for (Human i : allpeople) {
-			if (i.getfname() == pPeople.getfather()) {
+			if (i.getId() == idFather) {
 				father = i;
-			} else if (i.getfname() == pPeople.getmother()) {
+			} else if (i.getId() == idMother) {
 				mother = i;
 			}
 		}
