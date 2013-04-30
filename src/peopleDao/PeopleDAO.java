@@ -98,10 +98,9 @@ public class PeopleDAO implements DAO {
 
 			while (line != null) {
 				// Delete empty lines, comments and deletes useless spaces
-				if (line.isEmpty()) {
-					continue;
-				}
-				if (line.startsWith("#")) {
+				if (line.isEmpty() || line.startsWith("#") || line.startsWith("ï")) {
+					System.out.println("---------------------------------- LINE STARTS WITH # or ï");
+					line = bR.readLine();
 					continue;
 				}
 				line = line.trim();
