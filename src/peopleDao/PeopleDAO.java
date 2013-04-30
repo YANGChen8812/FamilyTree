@@ -35,7 +35,7 @@ public class PeopleDAO implements DAO {
 		final String fileName = path;
 		this.file = new File(fileName);
 
-		this.people = findPeople();
+		//this.people = findPeople();
 	}
 	
 	/*
