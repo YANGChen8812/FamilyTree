@@ -124,22 +124,19 @@ public class Human {
 			for (int i = 0; i < 2; i++) {
 				if (!Character.isDigit(pbirthDate.charAt(i))) {
 					pbirthDate = "";
-					System.err
-							.println("INVALID BIRTHDATE, contains character, first field is not a number");
+					System.err.println("INVALID BIRTHDATE, contains character, first field is not a number");
 				}
 			}
 			for (int i = 3; i < 5; i++) {
 				if (!Character.isDigit(pbirthDate.charAt(i))) {
 					pbirthDate = "";
-					System.err
-							.println("INVALID BIRTHDATE, contains character, second field is not a number");
+					System.err.println("INVALID BIRTHDATE, contains character, second field is not a number");
 				}
 			}
 			for (int i = 6; i < 10; i++) {
 				if (!Character.isDigit(pbirthDate.charAt(i))) {
 					pbirthDate = "";
-					System.err
-							.println("INVALID BIRTHDATE, contains character, third field is not a number");
+					System.err.println("INVALID BIRTHDATE, contains character, third field is not a number");
 				}
 			}
 		}

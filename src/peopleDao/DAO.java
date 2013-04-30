@@ -16,5 +16,5 @@ public interface DAO {
 	public List<String> getLinesFromFile();
 	public List<Human> fromLinesToHumans(List<String> lineList);
 	public Human transformLineToHuman(String line);
-	public void showHumans(List<Human> ppl, List<String> lines);
+	public void showHumans(List<Human> ppl);
 }

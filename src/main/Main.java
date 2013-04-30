@@ -27,7 +27,7 @@ public class Main {
 		DAO interf = new PeopleDAO();
 		interf.fileFromPath("csvFiles/gen-01.csv");
 		interf.findPeople();
-		interf.showHumans(interf.getHumans(), interf.getLinesFromFile());
+		interf.showHumans(interf.getHumans());
 	
 	}
 

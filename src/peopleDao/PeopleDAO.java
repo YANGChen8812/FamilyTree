@@ -212,16 +212,10 @@ public class PeopleDAO implements DAO {
 	 * 
 	 */
 	@Override
-	public void showHumans(List<Human> ppl, List<String> lines) {
+	public void showHumans(List<Human> ppl) {
 		System.out.println("SHOOW US YOUR HUMANS");
-		if(lines == null) {
-			System.out.println("NO LINES HERE");
-			return;
-		}
-		for(String i : lines){
-			System.out.println("Line :"+i);
-		}
-		if(ppl == null)
+
+		if(ppl == null || ppl.isEmpty())
 		{
 			System.out.println("NO PEOPLE HERE");
 			return;
