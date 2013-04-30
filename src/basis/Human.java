@@ -1,5 +1,8 @@
 package basis;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Human {
 	
 	//********** VARIABLES **********
@@ -146,7 +149,21 @@ public class Human {
 		
 	}
 	
-	public void parentLink(Human pPeople){
-		System.out.println("Mister "+pPeople.getlname()+" "+pPeople.getfname()+" have for father "+pPeople);
+	public List<Human> parentLink(Human pPeople, List<Human> allpeople){
+		List<Human> parents= new ArrayList<Human>();
+		Human father= new Human();
+		Human mother= new Human();
+		for(Human i: allpeople){
+			if(i.getfname()==pPeople.getfather()){
+				father=i;
+			}
+			else if(i.getfname()==pPeople.getmother()){
+				mother=i;
+			}
+		}
+		parents.set(0,father);
+		parents.set(1,mother);
+		System.out.println("Mister "+pPeople.getlname()+" "+pPeople.getfname()+" have for father "+pPeople.getfather()+" and for mother "+pPeople.getmother());
+		return parents;
 	}
 }
