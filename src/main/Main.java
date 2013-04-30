@@ -37,7 +37,7 @@ public class Main {
 		*/
 		new Fenetre();
 		DAO interf = new PeopleDAO();
-		interf.fileFromPath("csvFiles/gen-01.csv");
+		interf.fileFromPath("csvFiles/famille-01.csv");
 		interf.findPeople();
 		interf.showHumans(interf.getHumans());
 		/*Test of Human method DON'T ERASE IT*/
